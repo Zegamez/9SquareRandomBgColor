@@ -17,8 +17,8 @@ function App() {
   }
 
   // useState
-  const [rgb, setRGB] = useState(Square);
-  console.log(rgb)
+  // const [rgb, setRGB] = useState(Square);
+  // console.log(rgb)
 
   //useEffect
   useEffect(() =>{
