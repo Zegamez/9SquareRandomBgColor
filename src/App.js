@@ -7,12 +7,12 @@ import Header from './component/Header';
 
 function App() {
 
-
+  
   function randomColor(){
     let math_color_code  = Math.floor(Math.random() *16777215).toString(16);
     let letter = "#"
     letter += math_color_code
-
+  
     return letter
   }
   
@@ -24,30 +24,29 @@ function App() {
       rgbElem[i].innerHTML = "code:"+ color_code  +""
     }
   }
-  // useState
-  const [rgb, setRGB] = useState({});
   
-
-
-
+  
+  
   //useEffect
   useEffect(() =>{
     
     changeColor();
     
   },[]);
-
   
-
- 
   return (
     <div className="App">
     <Header />
+    
      <Square />
+    
      
      <button className="buttonChangeColor" onClick={changeColor}>Random Color</button>
     </div>
   );
 }
+
+
+
 
 export default App;
