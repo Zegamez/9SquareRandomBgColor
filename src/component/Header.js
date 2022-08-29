@@ -4,7 +4,7 @@ function Header() {
 
     return(
         <header className="App-header">
-    <h1>Name : Thanakorn Kamtamma</h1>
+    <h1>Name : Thanakorn Kamtamma (Zegame)</h1>
     </header>
     )
 }
