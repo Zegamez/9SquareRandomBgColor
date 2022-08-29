@@ -8,37 +8,44 @@ import Header from './component/Header';
 function App() {
 
 
-  function changeColor(){
+  function randomColor(){
     let math_color_code  = Math.floor(Math.random() *16777215).toString(16);
     let letter = "#"
     letter += math_color_code
 
     return letter
   }
-
+  
+  function changeColor (){
+    const rgbElem = document.getElementsByClassName('squre_color');
+    for(var i=0;i< rgbElem.length;i++){
+      let color_code = randomColor();
+      rgbElem[i].style.backgroundColor = color_code;
+      rgbElem[i].innerHTML = "code:"+ color_code  +""
+    }
+  }
   // useState
-  // const [rgb, setRGB] = useState(Square);
-  // console.log(rgb)
+  const [rgb, setRGB] = useState({});
+  
+
+
 
   //useEffect
   useEffect(() =>{
-    const rgbElem = document.getElementsByClassName('squre_color');
-    const ntc = require('ntcjs')
-    for(var i=0; i< rgbElem.length; i++){
-      let color_code = changeColor();
-      rgbElem[i].style.backgroundColor = color_code;
-      rgbElem[i].innerHTML =  "code:"+ color_code  +""
-     
-    }
     
-  },);
+    changeColor();
+    
+  },[]);
 
+  
+
+ 
   return (
     <div className="App">
     <Header />
      <Square />
      
-     <button className="buttonChangeColor">Random Color</button>
+     <button className="buttonChangeColor" onClick={changeColor}>Random Color</button>
     </div>
   );
 }
